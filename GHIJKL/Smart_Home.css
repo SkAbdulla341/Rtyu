@@ -1,0 +1,153 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background: #f4f6fb;
+}
+
+/* Header */
+.header {
+    background: #3976f6;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Dashboard Layout */
+.dashboard {
+    padding: 20px;
+}
+
+/* Boxes */
+.box, .box1, .box2 {
+    background: white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Devices Grid */
+.devices {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Device Box */
+.box {
+    width: 150px;
+    text-align: center;
+}
+
+/* Images */
+.box img {
+    width: 60px;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: #3976f6;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* Fan Rotation */
+.rotate {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Gauge */
+.gauge {
+    width: 150px;
+    margin: auto;
+}
+
+.gauge__body {
+    width: 100%;
+    height: 75px;
+    background: #ddd;
+    border-radius: 75px 75px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.gauge__fill {
+    width: 100%;
+    height: 100%;
+    background: #3976f6;
+    transform-origin: center bottom;
+    transform: rotate(0turn);
+    transition: 0.5s ease-out;
+}
+
+.gauge__cover {
+    width: 75%;
+    height: 75%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 12.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Date & Time */
+.datetime {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
